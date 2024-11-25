@@ -2,17 +2,22 @@
 <h2>Description</h2>
 <br/> In this project we will host a static web app, create a rest API, use serverless computing, authenticate users, store data within a NoSQL DB, translate URL, and improve performance via caching
 <br />
-<br/> <br/>
-<img src=""/>
+<br/> Project Architecture: <br/>
+<img src="https://github.com/user-attachments/assets/e4201958-eb72-4d2e-9f54-91836f0037ea"/>
 
 
-<h2>Languages and Utilities Used</h2>
+<h2> Services involved: </h2>
 
-AWS
+
+
+
+
+
+
 
 <h2>Environments Used </h2>
 
-- <b> </b>
+ <b> AWS </b>
 
 <h2>Project walk-through:</h2>
 <br/>
