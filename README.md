@@ -76,7 +76,7 @@ exports.handler = (event, context, callback) => {
 };
 ```
 
- <img src="https://github.com/user-attachments/assets/bd69f4c4-1e5f-40bf-9e40-4298ae80f0cc"/>
+ <img src="https://github.com/user-attachments/assets/65d36dae-67e5-4a2e-9542-184ac04836f8"/>
 
   <br/> <br/>
 
