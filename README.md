@@ -31,5 +31,154 @@
 ### **Prerequisites**  
 - Have an [AWS account](https://aws.amazon.com/console/)   
 
- ##  Step 1: 
+ ##  Step 1: Create a New API
 
+
+<br/> In order to connect our web app to an API to store data we will need a restful API. For this we will use API Gateway which will make it easy for us to create an API with different paths and HTTP methods <br/>
+ <br/> Navigate to API Gateway and create a rest API <br/>
+
+ <img src="https://github.com/user-attachments/assets/11d8c3ae-5767-4509-bf4f-700a5880172e"/>
+
+  <br/> Add resources <br/>
+
+ <img src="https://github.com/user-attachments/assets/fc2510af-873e-47a0-97cc-9f892c5461cb"/>
+ 
+<br/> Setting up Cross-Origin Resource Sharing (CORS) for your API is crucial because it allows your application to specify which domains can interact with your API resources, ensuring secure cross-origin requests. Without proper CORS configuration, browsers may block requests from different origins, which can disrupt the functionality of web applications relying on your API. <br/>
+
+  <br/> Verify the correct headers <br/>
+
+ <img src="https://github.com/user-attachments/assets/ead6c0cb-a95c-42db-ace2-d6c52eba8597"/>
+
+  <br/> Create a POST request that will trigger a Lambda Function <br/>
+
+ <img src="https://github.com/user-attachments/assets/13b13dc1-1fb8-404d-989c-730b4dd0d004"/>
+
+  <br/> But wait in order to complete this request method we must have a Lambda function created <br/>
+
+  ## Step 2: Create a Lambda Function
+
+<br/> We will use AWS Lambda and connect it to our API Gateway to execute code whenever we receive a request to one of our custom endpoints 
+ <br/>
+
+ <br/> Navigate to Lambda Functions and create  <br/>
+ <img src="https://github.com/user-attachments/assets/71162284-cec5-4643-bb92-05d9a9a3cb79"/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+  <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
+
+ <br/> <br/>
+
+ <img src=""/>
