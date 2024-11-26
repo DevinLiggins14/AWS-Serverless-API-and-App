@@ -63,13 +63,20 @@
  <br/> Navigate to Lambda Functions and create  <br/>
  <img src="https://github.com/user-attachments/assets/71162284-cec5-4643-bb92-05d9a9a3cb79"/>
 
-  <br/> <br/>
+  <br/> Remove async and add the following arguements <br/>
 
- <img src=""/>
+ <img src="https://github.com/user-attachments/assets/5e6fe862-2bdd-4be4-8d09-46990aeaecb6"/>
 
-  <br/> <br/>
+  <br/> Add the following Nodejs code. The exports.handler syntax defines the function as a CommonJS module, making it available for AWS Lambda to invoke. This handler processes the event and context inputs, then uses the callback to send a JSON response.  <br/>
 
- <img src=""/>
+```Bash
+exports.handler = (event, context, callback) => {
+  // TODO implement
+  callback(null, { message: "Hi, I'm Lambda!" });
+};
+```
+
+ <img src="https://github.com/user-attachments/assets/bd69f4c4-1e5f-40bf-9e40-4298ae80f0cc"/>
 
   <br/> <br/>
 
