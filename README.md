@@ -91,48 +91,44 @@ exports.handler = (event, context, callback) => {
 
  <img src="https://github.com/user-attachments/assets/a6c6fa57-c0c5-4cb6-9196-c4703428095d"/>
 
-  <br/> We've successfully connected our Lambda Function to our API Gateway. Now lets test to see if we can access our API from the web, to do this let's create some JavaScript that sends a request to our API. Copy the invoke URL from the previous stage created. We can then write our code in codepen to run it on their servers    <br/>
-<br/> Navigate to [codepen.io](https://codepen.io/),click start coding, and click on JavaScript  <br/>
- <img src="https://github.com/user-attachments/assets/c18d360c-9a20-4d12-aeff-632014b9d2c9"/>
-
-  <br/> Click on settings and disable auto-updating to make sure code written runs manually <br/>
-
- <img src="https://github.com/user-attachments/assets/5da577a3-3fc7-4706-b1f5-3f91708cb1f6"/>
-
-  <br/> Now write the following code  <br/>
-
-```Bash
-# Paste the invoke URL after the POST request
-var xhr = new XMLHttpRequest();
-xhr.open('POST', '');
-xhr.onreadystatechange = function(event) {
-  console.log(event.target);
-}
-xhr.send();
-```
-<br/> Now we can test our new POST reuqest by entering the invoke url into POSTMAN ( Don't forget the invoke url will be different if a different stage was created) <br/>
+  <br/> We've successfully connected our Lambda Function to our API Gateway. Now we can test our new POST request by entering the invoke url into POSTMAN (Don't forget the invoke url will be different if a new stage was created) <br/>
 
  
  <img src="https://github.com/user-attachments/assets/2347024e-03a8-418d-bfc4-75b6fbf668a4"/>
 
 <br/> Make sure to include the stage and resource in the URL. That's all we need at the moment no API key or Auth Token is required due to cors * <br/>
 
-  <br/> Now click on run... we get no output. This is because the OPTIONS request does return the right headers but the POST request doesn't. We will fix this by going to resources --> POST --> Method response to first change the shape of the expected response <br/>
-<br/> We can press ctrl + shift + i to view developer tools in the console and see the error <br/>
-<img src="https://github.com/user-attachments/assets/0124e41e-dba2-48a2-98f5-c6c14905f8b3"/>
+<br/> Let's go back to our Lambda Function and change the code show the event object  <br/> 
+
+```Bash
+exports.handler = (event, context, callback) => {
+  // TODO implement
+  callback(null, event);
+};
+```
+
+<img src="https://github.com/user-attachments/assets/40de24bf-c44a-437a-88ba-21b46e0b4bcc"/>
+
+<br/> Now go back to the API Gateway and test to send the following request body <br/>
+
+```
+{
+    "name": "Devin",
+    "age": 300
+}
+```
+
+<img src="https://github.com/user-attachments/assets/4db56015-a17c-4937-976e-945cd62d1133"/>
+
+<br/> Click test to see we get exactly the same output as the reponse body. We could change this by configuring the integration request and integration response <br/>
+
+<img src="https://github.com/user-attachments/assets/932647cf-d253-451b-ae61-163c4ec289c0"/>
+
+## Step 4: 
+  
+  <br/>   <br/>
 
 
-  <br/> Add a new header - Access-Control-Alow-Origin (Redeploy API to take effect) <br/> 
-
- <img src="https://github.com/user-attachments/assets/bcf23048-7a3a-458e-b13e-6b02d302bb09"/>
-
-  <br/> Now go to the integration response to set a value for this header  <br/>
-
- <img src="https://github.com/user-attachments/assets/bae417c2-66ae-4bd0-b94c-d7f304abe785"/>
-
-  <br/> The "*" will allow access from all origins and all servers (Redeploy API with a new stage again) <br/>
-
-<br/> Now run the JavaScript code again (Don't forget that the invoke URL will be different if a newstage was created) <br/>
  <img src=""/>
 
   <br/> <br/>
