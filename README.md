@@ -78,36 +78,61 @@ exports.handler = (event, context, callback) => {
 
  <img src="https://github.com/user-attachments/assets/65d36dae-67e5-4a2e-9542-184ac04836f8"/>
 
-  <br/> <br/>
 
- <img src=""/>
+## Step 3: Connect the Lambda Function to API Gateway endpoints 
+  <br/> Now that the function has been created we can return to the API and connect. (create a new stage and deploy the API after changes) <br/>
 
-  <br/> <br/>
+ <img src="https://github.com/user-attachments/assets/89b81a38-091c-44af-b71a-c3f275c89cbf"/>
+<img src="https://github.com/user-attachments/assets/7f2e56ef-f849-409e-af18-96e13fa89cdf"/>
+<br/> The API Gateway is now visible as the trigger in the Lambda Function we created <br/>
+<img src="https://github.com/user-attachments/assets/62035d02-773f-47f7-8039-a647e676d5d6"/>
 
- <img src=""/>
+  <br/> Now let's test the API <br/>
 
-  <br/> <br/>
+ <img src="https://github.com/user-attachments/assets/a6c6fa57-c0c5-4cb6-9196-c4703428095d"/>
 
- <img src=""/>
+  <br/> We've successfully connected our Lambda Function to our API Gateway. Now lets test to see if we can access our API from the web, to do this let's create some JavaScript that sends a request to our API. Copy the invoke URL from the previous stage created. We can then write our code in codepen to run it on their servers    <br/>
+<br/> Navigate to [codepen.io](https://codepen.io/),click start coding, and click on JavaScript  <br/>
+ <img src="https://github.com/user-attachments/assets/c18d360c-9a20-4d12-aeff-632014b9d2c9"/>
 
-  <br/> <br/>
+  <br/> Click on settings and disable auto-updating to make sure code written runs manually <br/>
 
- <img src=""/>
+ <img src="https://github.com/user-attachments/assets/5da577a3-3fc7-4706-b1f5-3f91708cb1f6"/>
 
-  <br/> <br/>
+  <br/> Now write the following code  <br/>
 
- <img src=""/>
+```Bash
+# Paste the invoke URL after the POST request
+var xhr = new XMLHttpRequest();
+xhr.open('POST', '');
+xhr.onreadystatechange = function(event) {
+  console.log(event.target);
+}
+xhr.send();
+```
+<br/> Now we can test our new POST reuqest by entering the invoke url into POSTMAN ( Don't forget the invoke url will be different if a different stage was created) <br/>
 
-  <br/> <br/>
+ 
+ <img src="https://github.com/user-attachments/assets/2347024e-03a8-418d-bfc4-75b6fbf668a4"/>
 
- <img src=""/>
+<br/> Make sure to include the stage and resource in the URL. That's all we need at the moment no API key or Auth Token is required due to cors * <br/>
 
-  <br/> <br/>
+  <br/> Now click on run... we get no output. This is because the OPTIONS request does return the right headers but the POST request doesn't. We will fix this by going to resources --> POST --> Method response to first change the shape of the expected response <br/>
+<br/> We can press ctrl + shift + i to view developer tools in the console and see the error <br/>
+<img src="https://github.com/user-attachments/assets/0124e41e-dba2-48a2-98f5-c6c14905f8b3"/>
 
- <img src=""/>
 
-  <br/> <br/>
+  <br/> Add a new header - Access-Control-Alow-Origin (Redeploy API to take effect) <br/> 
 
+ <img src="https://github.com/user-attachments/assets/bcf23048-7a3a-458e-b13e-6b02d302bb09"/>
+
+  <br/> Now go to the integration response to set a value for this header  <br/>
+
+ <img src="https://github.com/user-attachments/assets/bae417c2-66ae-4bd0-b94c-d7f304abe785"/>
+
+  <br/> The "*" will allow access from all origins and all servers (Redeploy API with a new stage again) <br/>
+
+<br/> Now run the JavaScript code again (Don't forget that the invoke URL will be different if a newstage was created) <br/>
  <img src=""/>
 
   <br/> <br/>
