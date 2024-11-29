@@ -132,15 +132,37 @@ exports.handler = (event, context, callback) => {
  <img src="https://github.com/user-attachments/assets/a9f40115-4ec0-44ce-aa63-c04245c7db76"/>
 <img src="https://github.com/user-attachments/assets/cbe36dfa-c714-4de4-aec1-7891c7a57d95"/>
 
-  <br/>  <br/>
+  <br/> Now add the following code to the Lambda configuration <br/>
 
- <img src=""/>
+```Bash
+exports.fn = (event, context, callback) => {
+  // Log the event to CloudWatch
+  console.log("Received event:", JSON.stringify(event, null, 2));
 
-  <br/> <br/>
+  // Return a response
+  callback(null, {
+    statusCode: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify({})
+  });
+};
+```
 
- <img src=""/>
+ <img src="https://github.com/user-attachments/assets/e2b380d0-020d-499c-ae11-5d30043bba93"/>
 
-  <br/> <br/>
+<br/> This code defines an AWS Lambda function that logs the incoming event to CloudWatch Logs for debugging or tracking purposes. It then responds to the client with an HTTP status code 200, a CORS header (Access-Control-Allow-Origin: *), and an empty JSON body. This setup ensures the function can handle cross-origin requests while providing a simple, functional response. <br/>
+
+  <br/> We can now test it from our API Gateway and head over to CloudWatch to view the logs  <br/>
+
+ <img src="https://github.com/user-attachments/assets/cb665cf0-1421-4538-8e28-377e5e6819cd"/>
+  <img src="https://github.com/user-attachments/assets/2c473721-f479-4da4-bb07-c2e0389698a0"/>
+<img src="https://github.com/user-attachments/assets/88c66f22-b884-4bd9-8e0f-573c6c681ae3"/>
+  
+  <br/> In order for our Lambda Function to only return relevant event data lets configure the following: 
+  Turn off Lambda Proxy integration that we configured earlier, 
+  <br/>
 
  <img src=""/>
 
