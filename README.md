@@ -124,14 +124,15 @@ exports.handler = (event, context, callback) => {
 
 <img src="https://github.com/user-attachments/assets/932647cf-d253-451b-ae61-163c4ec289c0"/>
 
-## Step 4: 
+## Step 4: Enable Lambda Proxy integration 
   
-  <br/>   <br/>
+  <br/> Configure the API to use Lambda Proxy integration so complete request data will be passed and not just the request body   <br/>
 
 
- <img src=""/>
+ <img src="https://github.com/user-attachments/assets/a9f40115-4ec0-44ce-aa63-c04245c7db76"/>
+<img src="https://github.com/user-attachments/assets/cbe36dfa-c714-4de4-aec1-7891c7a57d95"/>
 
-  <br/> <br/>
+  <br/>  <br/>
 
  <img src=""/>
 
